@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Hamza Sangare</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Hamza Sa'eed Ralsan Sangare</h1>
+        <p>Software Engineer & IT Support Specialist</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="certifications.html">Certifications</a>
+        </nav>
+        <button id="dark-mode-toggle" class="btn">Toggle Dark Mode</button>
+    </header>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Hamza Sangare. Contact me at: <a href="mailto:saeedralsans@gmail.com" style="color: var(--warm-brown);">saeedralsans@gmail.com</a></p>
+        <div class="social-links">
+            <a href="https://github.com/Hamza-hub320" target="_blank">GitHub</a>
+            <a href="linkedin.com/in/hamza-sangare-827a8a130" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
