@@ -29,8 +29,6 @@ if (savedTheme === 'dark') {
 }
 
 // Form Validation
-const contactForm = document.getElementById('contact-form');
-
 contactForm.addEventListener('submit', function (e) {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
@@ -41,6 +39,43 @@ contactForm.addEventListener('submit', function (e) {
         alert('Please fill out all fields.');
     }
 });
+
+const contactForm = document.getElementById('contact-form');
+const confirmationMessage = document.getElementById('confirmation-message');
+
+contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Submit the form data to Formspree
+    const formData = new FormData(contactForm);
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            // Show confirmation message
+            confirmationMessage.style.display = 'block';
+
+            // Clear the form
+            contactForm.reset();
+
+            // Hide the confirmation message after 5 seconds
+            setTimeout(() => {
+                confirmationMessage.style.display = 'none';
+            }, 5000);
+        } else {
+            alert('Oops! Something went wrong. Please try again.');
+        }
+    } catch (error) {
+        alert('Oops! Something went wrong. Please try again.');
+    }
+});
+
 
 // Dynamic Year in Footer
 const year = new Date().getFullYear();
