@@ -92,7 +92,6 @@ window.addEventListener('load', updateProgressBar);
 const scrollToTopBtn = document.getElementById('scroll-to-top');
 
 window.addEventListener('scroll', () => {
-    console.log('Scroll position:', window.scrollY);
     if (window.scrollY > 300) {
         scrollToTopBtn.classList.add('visible');
     } else {
@@ -103,6 +102,6 @@ window.addEventListener('scroll', () => {
 scrollToTopBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth' // Smooth scroll
     });
 });
