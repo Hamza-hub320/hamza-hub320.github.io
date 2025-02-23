@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check if both elements exist
     if (contactForm && confirmationMessage) {
         contactForm.addEventListener('submit', async function (e) {
-            console.log('Form submitted'); // Debugging: Check if the listener is triggered
+            console.log('Form submission intercepted'); // Debugging: Check if the listener is triggered
             e.preventDefault(); // Prevent the default form submission
 
             // Form validation
