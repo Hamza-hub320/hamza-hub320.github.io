@@ -955,6 +955,11 @@ blockquote + p {
     background-color: var(--medium-green);
 }
 
+.buttons-container {
+    display: flex;
+    gap: 1rem; 
+    margin-top: 2rem; 
+}
 /* Scroll to Top Button */
 .scroll-to-top-btn {
     position: fixed;
