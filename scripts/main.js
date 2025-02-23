@@ -33,10 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Form Submission
+    // Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function () {
+    // Form Submission
     const contactForm = document.getElementById('contact-form');
     const confirmationMessage = document.getElementById('confirmation-message');
 
-    if (contactForm) {
+    // Check if both elements exist
+    if (contactForm && confirmationMessage) {
         contactForm.addEventListener('submit', async function (e) {
             console.log('Form submitted'); // Debugging: Check if the listener is triggered
             e.preventDefault(); // Prevent the default form submission
@@ -62,7 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
-                if (response.status === 200) {
+                // Log the response for debugging
+                console.log('Response status:', response.status);
+                console.log('Response body:', await response.json());
+
+                // Check if the response status is 200 or 302 (OK or redirect)
+                if (response.status === 200 || response.status === 302) {
                     // Show confirmation message
                     confirmationMessage.style.display = 'block';
 
@@ -74,15 +83,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         confirmationMessage.style.display = 'none';
                     }, 5000);
                 } else {
+                    // Handle other status codes
                     alert('Oops! Something went wrong. Please try again.');
                 }
             } catch (error) {
+                // Handle network errors
                 console.error('Error:', error);
                 alert('Oops! Something went wrong. Please try again.');
             }
         });
+    } else {
+        console.error('Form or confirmation message element not found!');
     }
-
+});
     // Dynamic Year in Footer
     const year = new Date().getFullYear();
     const yearElement = document.getElementById('year');
