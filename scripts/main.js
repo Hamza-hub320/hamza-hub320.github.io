@@ -33,16 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Form Submission
-    // Wait for the DOM to load
+   // Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', function () {
     // Form Submission
     const contactForm = document.getElementById('contact-form');
     const confirmationMessage = document.getElementById('confirmation-message');
 
-    // Check if both elements exist
     if (contactForm && confirmationMessage) {
+        console.log('Form and confirmation message elements found'); // Debugging
+
         contactForm.addEventListener('submit', async function (e) {
-            console.log('Form submission intercepted'); // Debugging: Check if the listener is triggered
+            console.log('Form submission intercepted'); // Debugging
             e.preventDefault(); // Prevent the default form submission
 
             // Form validation
