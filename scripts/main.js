@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
-                if (response.ok) {
+                if (response.status === 200) {
                     // Show confirmation message
                     confirmationMessage.style.display = 'block';
 
