@@ -87,3 +87,22 @@ function updateProgressBar() {
 
 // Update progress bar on page load
 window.addEventListener('load', updateProgressBar);
+
+// Scroll to Top Button
+const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+window.addEventListener('scroll', () => {
+    console.log('Scroll position:', window.scrollY);
+    if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
