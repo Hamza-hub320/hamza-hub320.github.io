@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert('Oops! Something went wrong. Please try again.');
                 }
             } catch (error) {
+                console.error('Error:', error);
                 alert('Oops! Something went wrong. Please try again.');
             }
         });
