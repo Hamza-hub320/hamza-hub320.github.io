@@ -28,23 +28,22 @@ if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
 }
 
-// Form Validation
-contactForm.addEventListener('submit', function (e) {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    if (!name || !email || !message) {
-        e.preventDefault();
-        alert('Please fill out all fields.');
-    }
-});
-
+// Form Submission
 const contactForm = document.getElementById('contact-form');
 const confirmationMessage = document.getElementById('confirmation-message');
 
 contactForm.addEventListener('submit', async function (e) {
     e.preventDefault(); // Prevent the default form submission
+
+    // Form validation
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        return; // Stop execution if validation fails
+    }
 
     // Submit the form data to Formspree
     const formData = new FormData(contactForm);
@@ -76,7 +75,6 @@ contactForm.addEventListener('submit', async function (e) {
     }
 });
 
-
 // Dynamic Year in Footer
 const year = new Date().getFullYear();
 document.getElementById('year').textContent = year;
@@ -93,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // Track Resume Downloads
 document.getElementById('resume-download').addEventListener('click', function () {
     console.log('Resume downloaded!');
-    // You can also send this data to a server or analytics tool
 });
 
 // Show Confirmation Message
@@ -102,7 +99,7 @@ document.getElementById('resume-download').addEventListener('click', function ()
     message.style.display = 'block';
     setTimeout(() => {
         message.style.display = 'none';
-    }, 3000); // Hide the message after 3 seconds
+    }, 3000);
 });
 
 // Calculate Progress Bar Width
