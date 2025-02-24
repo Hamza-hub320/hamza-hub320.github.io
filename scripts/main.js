@@ -167,3 +167,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// Burger Menu Toggle
+const burgerMenu = document.getElementById('burger-menu');
+const nav = document.querySelector('nav');
+
+if (burgerMenu && nav) {
+    burgerMenu.addEventListener('click', function () {
+        // Toggle the "active" class on the navigation
+        nav.classList.toggle('active');
+
+        // Animate the burger menu icon
+        burgerMenu.classList.toggle('toggle');
+    });
+}
+
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        nav.classList.remove('active');
+        burgerMenu.classList.remove('toggle');
+    });
+});
