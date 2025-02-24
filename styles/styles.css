@@ -983,3 +983,66 @@ blockquote + p {
 .scroll-to-top-btn:hover {
     background-color: var(--medium-green);
 }
+
+/* Burger Menu Styles */
+.burger-menu {
+    display: none; /* Hide by default on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto; /* Push the burger menu to the right */
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color); /* Use your site's text color */
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex; /* Show the burger menu on smaller screens */
+    }
+
+    nav {
+        position: absolute;
+        top: 80px; /* Adjust based on your header height */
+        right: 0;
+        background-color: var(--background-color); /* Use your site's background color */
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
+
+/* Burger Menu Animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+nav {
+    transition: transform 0.3s ease-in-out;
+}
+.burger-menu div {
+    transition: all 0.3s ease;
+}
