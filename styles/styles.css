@@ -492,6 +492,11 @@ footer {
     color: var(--light-beige);
 }
 
+.email-link {
+    color: var(--warm-brown);
+    text-decoration: none;
+}
+
 /* CTA Section */
 #cta {
     text-align: center;
