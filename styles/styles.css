@@ -1013,7 +1013,7 @@ blockquote + p {
         position: absolute; 
         top: 0;
         right: 0;
-        height: 35vh;
+        height: 50vh;
         width: 150px;
         background-color: var(--medium-green);
         flex-direction: column;
