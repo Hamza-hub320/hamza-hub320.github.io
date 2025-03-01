@@ -1020,14 +1020,17 @@ blockquote + p {
         align-items: flex-start;
         padding: 20px;
         transform: translateX(100%); 
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
         z-index: 999;
         border-radius: 5px;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        visibility: hidden;
     }
 
     nav.active {
         transform: translateX(0);
+        opacity: 1; 
+        visibility: visible; 
     }
 
     nav a {
@@ -1059,6 +1062,8 @@ blockquote + p {
         display: flex; 
         background-color: transparent;
         padding: 0;
+        opacity: 1;
+        visibility: visible;
     }
 
     nav a {
