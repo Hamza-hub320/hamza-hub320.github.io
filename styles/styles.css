@@ -1112,3 +1112,20 @@ header {
 nav {
     z-index: 999; /* Menu should be above the overlay */
 }
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden; 
+    width: 100%; 
+    max-width: 100%; 
+}
+
+/* Ensure all elements stay within the viewport */
+* {
+    box-sizing: border-box; 
+}
+
+/* Check for elements causing overflow */
+header, nav, .overlay, #language-switcher, #menu-toggle {
+    max-width: 100%; 
+}
