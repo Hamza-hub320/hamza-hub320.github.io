@@ -1010,7 +1010,7 @@ blockquote + p {
     }
 
     nav {
-        position: fixed; 
+        position: absolute; 
         top: 0;
         right: 0;
         height: 35vh;
