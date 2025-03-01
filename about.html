@@ -12,20 +12,22 @@
     <header>
         <h1>Hamza Sangare</h1>
         <h3>Software Engineer & IT Support Specialist</h3>
-        <!-- Burger Menu Icon -->
-       
-        <!-- Navigation Links -->
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <!-- Burger Menu Button -->
+    <button id="menu-toggle" class="btn">☰</button>
+    <!-- Navigation Links -->
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
     </header>
 
     <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
+        <h2>About Me <i class="fas fa-book-open"></i></h2>
         <div class="about-content">
             <img src="images/profile.jpg" alt="Hamza Sangare" class="profile-photo">
             <div class="bio">
@@ -66,5 +68,8 @@
             <a href="https://www.linkedin.com/in/hamza-sangare-827a8a130/" target="_blank" aria-label="LinkedIn">LinkedIn <i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
+
+     <!-- Scripts -->
+    <script src="scripts/main.js"></script>
 </body>
 </html>
