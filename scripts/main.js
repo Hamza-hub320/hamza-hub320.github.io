@@ -170,22 +170,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', function () {
-    // Get elements
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     const overlay = document.getElementById('overlay');
 
     if (menuToggle && navMenu && overlay) {
         // Toggle the menu and overlay
-        menuToggle.addEventListener('click', function () {
+        menuToggle.addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevent the click from bubbling up to the document
             navMenu.classList.toggle('active');
             overlay.classList.toggle('active');
         });
 
-        // Close the menu when the overlay is clicked
-        overlay.addEventListener('click', function () {
-            navMenu.classList.remove('active');
-            overlay.classList.remove('active');
+        // Close the menu when clicking outside the menu
+        document.addEventListener('click', function (event) {
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnMenuToggle = menuToggle.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnMenuToggle) {
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+            }
         });
 
         // Close the menu when a navigation link is clicked
@@ -195,6 +200,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 navMenu.classList.remove('active');
                 overlay.classList.remove('active');
             });
+        });
+
+        // Close the menu when the screen is resized
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768) { // Adjust breakpoint if needed
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+            }
         });
     } else {
         console.error('Menu toggle, nav menu, or overlay element not found!');
