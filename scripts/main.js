@@ -168,4 +168,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Burger Menu Toggle
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function () {
+    // Get elements
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const overlay = document.getElementById('overlay');
+
+    if (menuToggle && navMenu && overlay) {
+        // Toggle the menu and overlay
+        menuToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        // Close the menu when the overlay is clicked
+        overlay.addEventListener('click', function () {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Close the menu when a navigation link is clicked
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+    } else {
+        console.error('Menu toggle, nav menu, or overlay element not found!');
+    }
+});
