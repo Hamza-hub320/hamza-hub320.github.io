@@ -1183,3 +1183,43 @@ html, body {
 header, nav, .overlay, #language-switcher, #menu-toggle {
     max-width: 100%; 
 }
+
+:root {
+    --dark-green: #2C3930;
+    --medium-green: #3F4F44;
+    --warm-brown: #A27B5C;
+    --light-beige: #DCD7C9;
+}
+
+#nav-menu {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    background-color: var(--dark-green);
+    border-radius: 5px;
+}
+
+#nav-menu a {
+    text-decoration: none;
+    color: var(--light-beige);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+#nav-menu a:hover {
+    color: var(--warm-brown);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
