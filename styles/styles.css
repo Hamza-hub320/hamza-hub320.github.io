@@ -164,6 +164,60 @@ footer {
     color: var(--warm-brown);
 }
 
+/* Certifications Page */
+.certification-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.certification-card {
+    background-color: var(--medium-green);
+    color: var(--light-beige);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.certification-card h3 {
+    margin-top: 0;
+    color: var(--warm-brown);
+}
+
+.certification-badge {
+    width: 100px;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.verification-link {
+    display: inline-block;
+    margin: 10px 0;
+    color: var(--light-beige);
+    background-color: var(--warm-brown);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.verification-link:hover {
+    background-color: var(--dark-green);
+}
+
+.certification-description {
+    font-size: 0.9rem;
+    margin: 10px 0 0;
+    color: var(--light-beige);
+}
+
 /* Contact Page */
 form {
     display: flex;
