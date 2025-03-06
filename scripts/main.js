@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmationMessage = document.getElementById('confirmation-message');
 
     if (contactForm && confirmationMessage) {
-        console.log('Form and confirmation message elements found'); // Debugging
+        console.log('Form and confirmation message elements found'); 
 
         contactForm.addEventListener('submit', async function (e) {
-            console.log('Form submission intercepted'); // Debugging
-            e.preventDefault(); // Prevent the default form submission
+            console.log('Form submission intercepted'); 
+            e.preventDefault(); 
 
             // Form validation
             const name = document.getElementById('name').value;
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (!name || !email || !message) {
                 alert('Please fill out all fields.');
-                return; // Stop execution if validation fails
+                return; 
             }
 
             // Submit the form data to Formspree
